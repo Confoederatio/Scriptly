@@ -40,10 +40,15 @@ global.tensorflow = require("@tensorflow/tfjs");
 global.v8 = require("v8");
 
 //Add main variable for proxy models to be built off of
-global.main = {
-  models: {},
-  sedac_domain: [1990, 2015]
-};
+global.config = {
+  defines: {
+    common: {
+      prefix: "Scriptly-CLI",
+      startup_message: "Scriptly-CLI. Type 'help' for help."
+    }
+  }
+}
+global.main = {};
 
 //Load all scripts
 FileManager.loadAllScripts();
@@ -96,20 +101,24 @@ FileManager.loadAllScripts();
 
 //CLI handling
 {
+  //Set up global.prefix
+  global.prefix = config.defines.common.prefix;
+
   //Set up global.cli. This must be defined outside a function.
   global.cli = readline.createInterface({
       input: process.stdin,
       output: process.stdout,
   });
   //Log init settings
-  console.log(`[Eoscala] Initialised with:`);
-  console.log(`[Eoscala] - RAM allocation: ${v8.getHeapStatistics().heap_size_limit/1024/1024} MB`);
+  console.log(`[${prefix}] ${config.defines.common.startup_message}`);
+  console.log(`[${prefix}] Initialised with:`);
+  console.log(`[${prefix}] - RAM allocation: ${v8.getHeapStatistics().heap_size_limit/1024/1024} MB`);
 
   function handleCLI () {
-    //Run Eoscala frame
-    cli.question("[Eoscala] > ", (input_string) => {
+    //Run Scriptly-CLI frame
+    cli.question(`[${prefix}] > `, (input_string) => {
         if (input_string.toLowerCase() === "exit") {
-          console.log("Exiting Eoscala.");
+          console.log(`Exiting ${prefix}.`);
 
           //Break CLI
           cli.close();
