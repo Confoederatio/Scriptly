@@ -16,7 +16,8 @@
         console.error(e);
       }
     } else {
-      
+      //Code for handling individual commands goes here
+      //[WIP] - To be replaced by a config system at a later date using JSDoc headers
     }
   }
 }
