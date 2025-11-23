@@ -13,6 +13,4 @@ blocklyJS(Blockly);
 const biBlocksJS = require('./lib/bi_blockly/generators/javascript/bi_blockly.js')
 biBlocksJS(Blockly);
 
-console.log("Blockly")
-
 module.exports = Blockly;
