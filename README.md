@@ -13,8 +13,7 @@
 [![Join our community!](https://img.shields.io/discord/548994743925997570?label=Discord&style=for-the-badge)](https://discord.gg/89kQY2KFQz) ![](https://img.shields.io/github/languages/code-size/Confoederatio/AnalyticalEngine?style=for-the-badge) <!--![](https://img.shields.io/github/downloads/Confoederatio/AnalyticalEngine/total?style=for-the-badge)-->
 
 > [!WARNING]
-> Scriptly is currently in **beta.**
-> This means that certain features, such as node-based editing and transpilers may not be fully implemented at the time of writing.
+> Scriptly has now been folded into [**Vercengen**](https://github.com/Confoederatio/Vercengen/) as the component `ve.ScriptManager` as part of a runtime software engine, and this repository has now been deprecated.
 
 ![](https://github.com/Confoederatio/Scriptly/blob/master/gfx/scriptly_preview_01.png)
 
@@ -38,3 +37,4 @@ Multi-file management for end app components are implemented through Vercengen f
 Credit goes to Juan Carlos Oroczo of [BlocksIDE](https://github.com/JC-Orozco/BlocksIDE) for much of the original transpiler code. Since Create React App has been deprecated in the years since the original repository was updated, we have quarantined it as a subsection of the main Electron process and refactored most of the Components to use composition over inheritance.
 
 The original repository ('BlocksIDE') was licenced under Apache 2.0 (2016). Any modifications made by CTD fall underneath MIT.
+
